@@ -3,7 +3,7 @@ $(document).ready(function(e){
 $('#principal').height($('#page1').height());
 document.addEventListener("deviceready",function(){
 	
-	audio=window.plugings.LowLatencyAudio;
+	audio=window.plugins.LowLatencyAudio;
 	
 	audio.preloadFx('do','audio/DO'.mp3, function(){},function(e){alert('Error '+e);});
 	audio.preloadFx('re','audio/RE'.mp3, function(){},function(e){alert('Error '+e);});
@@ -13,11 +13,11 @@ document.addEventListener("deviceready",function(){
 	audio.preloadFx('la','audio/LA'.mp3, function(){},function(e){alert('Error '+e);});
 	audio.preloadFx('si','audio/SI'.mp3, function(){},function(e){alert('Error '+e);});
 	
-	$('.nota').blind('touchstart',function(){
+	$('.nota').bind('touchstart',function(){
 		$(this).addClass('tocada');
 		audio.play($(this).attr('id'));
 		
-	}).blind('touchend',function(){
+	}).bind('touchend',function(){
 		$(this).removeClass('tocada');
 	});
 	
